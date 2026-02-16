@@ -8,10 +8,11 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-gray-50: oklch(98.5% 0.002 247.839);
-    --color-gray-200: oklch(92.8% 0.006 264.531);
     --color-gray-400: oklch(70.7% 0.022 261.325);
+    --color-white: #fff;
     --spacing: 0.25rem;
     --font-weight-semibold: 600;
+    --radius-sm: 0.25rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -180,14 +181,11 @@
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
-  .h-15 {
-    height: calc(var(--spacing) * 15);
-  }
   .h-17 {
     height: calc(var(--spacing) * 17);
   }
-  .h-18 {
-    height: calc(var(--spacing) * 18);
+  .h-130 {
+    height: calc(var(--spacing) * 130);
   }
   .w-5 {
     width: calc(var(--spacing) * 5);
@@ -195,14 +193,17 @@
   .w-6 {
     width: calc(var(--spacing) * 6);
   }
-  .w-30 {
-    width: calc(var(--spacing) * 30);
+  .w-20 {
+    width: calc(var(--spacing) * 20);
   }
   .w-33 {
     width: calc(var(--spacing) * 33);
   }
-  .w-35 {
-    width: calc(var(--spacing) * 35);
+  .w-200 {
+    width: calc(var(--spacing) * 200);
+  }
+  .w-250 {
+    width: calc(var(--spacing) * 250);
   }
   .border-collapse {
     border-collapse: collapse;
@@ -219,21 +220,27 @@
   .justify-between {
     justify-content: space-between;
   }
-  .justify-center {
-    justify-content: center;
-  }
   .gap-3 {
     gap: calc(var(--spacing) * 3);
   }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
   }
-  .gap-5 {
-    gap: calc(var(--spacing) * 5);
+  .rounded-sm {
+    border-radius: var(--radius-sm);
   }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
+  }
+  .bg-\[\#d92926\] {
+    background-color: #d92926;
+  }
+  .bg-\[url\(\'\.\/images\/bacck\.jpeg\'\)\] {
+    background-image: url('./images/bacck.jpeg');
+  }
+  .bg-cover {
+    background-size: cover;
   }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
@@ -247,9 +254,36 @@
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
   }
+  .pt-40 {
+    padding-top: calc(var(--spacing) * 40);
+  }
+  .pt-60 {
+    padding-top: calc(var(--spacing) * 60);
+  }
+  .pt-80 {
+    padding-top: calc(var(--spacing) * 80);
+  }
+  .pl-8 {
+    padding-left: calc(var(--spacing) * 8);
+  }
+  .text-\[10px\] {
+    font-size: 10px;
+  }
+  .text-\[15px\] {
+    font-size: 15px;
+  }
+  .text-\[20px\] {
+    font-size: 20px;
+  }
+  .text-\[35px\] {
+    font-size: 35px;
+  }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
+  }
+  .text-white {
+    color: var(--color-white);
   }
   .underline {
     text-decoration-line: underline;
@@ -257,6 +291,11 @@
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
+  }
+  .lg\:block {
+    @media (width >= 64rem) {
+      display: block;
+    }
   }
   .lg\:flex {
     @media (width >= 64rem) {
@@ -266,6 +305,66 @@
   .lg\:hidden {
     @media (width >= 64rem) {
       display: none;
+    }
+  }
+  .lg\:h-90 {
+    @media (width >= 64rem) {
+      height: calc(var(--spacing) * 90);
+    }
+  }
+  .lg\:h-100 {
+    @media (width >= 64rem) {
+      height: calc(var(--spacing) * 100);
+    }
+  }
+  .lg\:h-130 {
+    @media (width >= 64rem) {
+      height: calc(var(--spacing) * 130);
+    }
+  }
+  .lg\:h-full {
+    @media (width >= 64rem) {
+      height: 100%;
+    }
+  }
+  .lg\:w-100 {
+    @media (width >= 64rem) {
+      width: calc(var(--spacing) * 100);
+    }
+  }
+  .lg\:w-250 {
+    @media (width >= 64rem) {
+      width: calc(var(--spacing) * 250);
+    }
+  }
+  .lg\:w-300 {
+    @media (width >= 64rem) {
+      width: calc(var(--spacing) * 300);
+    }
+  }
+  .lg\:w-700 {
+    @media (width >= 64rem) {
+      width: calc(var(--spacing) * 700);
+    }
+  }
+  .lg\:w-\[800px\] {
+    @media (width >= 64rem) {
+      width: 800px;
+    }
+  }
+  .lg\:w-\[1000px\] {
+    @media (width >= 64rem) {
+      width: 1000px;
+    }
+  }
+  .lg\:w-\[1200px\] {
+    @media (width >= 64rem) {
+      width: 1200px;
+    }
+  }
+  .lg\:w-full {
+    @media (width >= 64rem) {
+      width: 100%;
     }
   }
   .lg\:justify-center {
@@ -278,6 +377,16 @@
       gap: calc(var(--spacing) * 5);
     }
   }
+  .lg\:bg-\[url\(\'\.\/images\/for_lg\.webp\'\)\] {
+    @media (width >= 64rem) {
+      background-image: url('./images/for_lg.webp');
+    }
+  }
+  .lg\:bg-cover {
+    @media (width >= 64rem) {
+      background-size: cover;
+    }
+  }
   .lg\:pt-6 {
     @media (width >= 64rem) {
       padding-top: calc(var(--spacing) * 6);
@@ -287,6 +396,11 @@
     @media (width >= 64rem) {
       --tw-font-weight: var(--font-weight-semibold);
       font-weight: var(--font-weight-semibold);
+    }
+  }
+  .xl\:block {
+    @media (width >= 80rem) {
+      display: block;
     }
   }
   .xl\:flex {
@@ -304,24 +418,24 @@
       height: calc(var(--spacing) * 22);
     }
   }
-  .xl\:w-38 {
-    @media (width >= 80rem) {
-      width: calc(var(--spacing) * 38);
-    }
-  }
   .xl\:w-43 {
     @media (width >= 80rem) {
       width: calc(var(--spacing) * 43);
     }
   }
+  .xl\:w-100 {
+    @media (width >= 80rem) {
+      width: calc(var(--spacing) * 100);
+    }
+  }
+  .xl\:w-120 {
+    @media (width >= 80rem) {
+      width: calc(var(--spacing) * 120);
+    }
+  }
   .xl\:rounded-\[7px\] {
     @media (width >= 80rem) {
       border-radius: 7px;
-    }
-  }
-  .xl\:rounded-\[10px\] {
-    @media (width >= 80rem) {
-      border-radius: 10px;
     }
   }
   .xl\:border {
@@ -340,29 +454,9 @@
       background-color: var(--color-gray-50);
     }
   }
-  .xl\:bg-gray-200 {
-    @media (width >= 80rem) {
-      background-color: var(--color-gray-200);
-    }
-  }
-  .xl\:px-4 {
-    @media (width >= 80rem) {
-      padding-inline: calc(var(--spacing) * 4);
-    }
-  }
   .xl\:px-5 {
     @media (width >= 80rem) {
       padding-inline: calc(var(--spacing) * 5);
-    }
-  }
-  .xl\:pl-2 {
-    @media (width >= 80rem) {
-      padding-left: calc(var(--spacing) * 2);
-    }
-  }
-  .xl\:pl-20 {
-    @media (width >= 80rem) {
-      padding-left: calc(var(--spacing) * 20);
     }
   }
 }
