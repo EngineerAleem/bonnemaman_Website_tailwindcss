@@ -5,6 +5,7 @@
   :root, :host {
     --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-gray-50: oklch(98.5% 0.002 247.839);
@@ -13,7 +14,6 @@
     --spacing: 0.25rem;
     --font-weight-semibold: 600;
     --radius-sm: 0.25rem;
-    --radius-4xl: 2rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -167,11 +167,11 @@
   }
 }
 @layer utilities {
+  .my-7 {
+    margin-block: calc(var(--spacing) * 7);
+  }
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
-  }
-  .mt-3 {
-    margin-top: calc(var(--spacing) * 3);
   }
   .mt-6 {
     margin-top: calc(var(--spacing) * 6);
@@ -182,9 +182,6 @@
   .hidden {
     display: none;
   }
-  .table {
-    display: table;
-  }
   .h-5 {
     height: calc(var(--spacing) * 5);
   }
@@ -194,32 +191,14 @@
   .h-17 {
     height: calc(var(--spacing) * 17);
   }
-  .h-20 {
-    height: calc(var(--spacing) * 20);
-  }
-  .h-25 {
-    height: calc(var(--spacing) * 25);
-  }
-  .h-30 {
-    height: calc(var(--spacing) * 30);
-  }
   .h-35 {
     height: calc(var(--spacing) * 35);
   }
-  .h-36 {
-    height: calc(var(--spacing) * 36);
-  }
-  .h-40 {
-    height: calc(var(--spacing) * 40);
-  }
-  .h-43 {
-    height: calc(var(--spacing) * 43);
-  }
-  .h-80 {
-    height: calc(var(--spacing) * 80);
-  }
   .h-130 {
     height: calc(var(--spacing) * 130);
+  }
+  .h-full {
+    height: 100%;
   }
   .w-5 {
     width: calc(var(--spacing) * 5);
@@ -227,50 +206,23 @@
   .w-6 {
     width: calc(var(--spacing) * 6);
   }
-  .w-20 {
-    width: calc(var(--spacing) * 20);
-  }
-  .w-25 {
-    width: calc(var(--spacing) * 25);
-  }
-  .w-30 {
-    width: calc(var(--spacing) * 30);
-  }
   .w-33 {
     width: calc(var(--spacing) * 33);
   }
   .w-35 {
     width: calc(var(--spacing) * 35);
   }
-  .w-36 {
-    width: calc(var(--spacing) * 36);
-  }
-  .w-40 {
-    width: calc(var(--spacing) * 40);
-  }
-  .w-43 {
-    width: calc(var(--spacing) * 43);
-  }
-  .w-80 {
-    width: calc(var(--spacing) * 80);
-  }
   .w-full {
     width: 100%;
-  }
-  .flex-shrink {
-    flex-shrink: 1;
   }
   .shrink-0 {
     flex-shrink: 0;
   }
-  .border-collapse {
-    border-collapse: collapse;
-  }
   .cursor-pointer {
     cursor: pointer;
   }
-  .resize {
-    resize: both;
+  .flex-col {
+    flex-direction: column;
   }
   .items-center {
     align-items: center;
@@ -280,9 +232,6 @@
   }
   .justify-center {
     justify-content: center;
-  }
-  .gap-2 {
-    gap: calc(var(--spacing) * 2);
   }
   .gap-3 {
     gap: calc(var(--spacing) * 3);
@@ -296,27 +245,11 @@
   .overflow-x-auto {
     overflow-x: auto;
   }
-  .scroll-auto {
-    scroll-behavior: auto;
-  }
-  .rounded-4xl {
-    border-radius: var(--radius-4xl);
-  }
-  .rounded-\[200px\] {
-    border-radius: 200px;
-  }
-  .rounded-\[500px\] {
-    border-radius: 500px;
-  }
   .rounded-full {
     border-radius: calc(infinity * 1px);
   }
   .rounded-sm {
     border-radius: var(--radius-sm);
-  }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
   }
   .bg-\[\#d92926\] {
     background-color: #d92926;
@@ -333,6 +266,9 @@
   .px-5 {
     padding-inline: calc(var(--spacing) * 5);
   }
+  .px-8 {
+    padding-inline: calc(var(--spacing) * 8);
+  }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
   }
@@ -348,20 +284,26 @@
   .pt-80 {
     padding-top: calc(var(--spacing) * 80);
   }
+  .pl-4 {
+    padding-left: calc(var(--spacing) * 4);
+  }
   .pl-8 {
     padding-left: calc(var(--spacing) * 8);
   }
   .text-center {
     text-align: center;
   }
-  .text-\[10px\] {
-    font-size: 10px;
+  .font-serif {
+    font-family: var(--font-serif);
   }
   .text-\[13px\] {
     font-size: 13px;
   }
   .text-\[15px\] {
     font-size: 15px;
+  }
+  .text-\[20px\] {
+    font-size: 20px;
   }
   .text-\[30px\] {
     font-size: 30px;
@@ -375,13 +317,6 @@
   }
   .text-white {
     color: var(--color-white);
-  }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .lg\:block {
     @media (width >= 64rem) {
@@ -448,9 +383,19 @@
       background-size: cover;
     }
   }
+  .lg\:px-60 {
+    @media (width >= 64rem) {
+      padding-inline: calc(var(--spacing) * 60);
+    }
+  }
   .lg\:pt-6 {
     @media (width >= 64rem) {
       padding-top: calc(var(--spacing) * 6);
+    }
+  }
+  .lg\:text-\[23px\] {
+    @media (width >= 64rem) {
+      font-size: 23px;
     }
   }
   .lg\:text-\[45px\] {
@@ -525,17 +470,22 @@
       padding-inline: calc(var(--spacing) * 5);
     }
   }
-}
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
+  .xl\:px-60 {
+    @media (width >= 80rem) {
+      padding-inline: calc(var(--spacing) * 60);
+    }
+  }
+  .xl\:text-\[24px\] {
+    @media (width >= 80rem) {
+      font-size: 24px;
+    }
+  }
 }
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
 }
-@property --tw-outline-style {
+@property --tw-border-style {
   syntax: "*";
   inherits: false;
   initial-value: solid;
@@ -543,9 +493,8 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-border-style: solid;
       --tw-font-weight: initial;
-      --tw-outline-style: solid;
+      --tw-border-style: solid;
     }
   }
 }
