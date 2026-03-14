@@ -12,6 +12,8 @@
     --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-white: #fff;
     --spacing: 0.25rem;
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
     --font-weight-semibold: 600;
     --radius-sm: 0.25rem;
     --default-font-family: var(--font-sans);
@@ -182,6 +184,9 @@
   .hidden {
     display: none;
   }
+  .table {
+    display: table;
+  }
   .h-5 {
     height: calc(var(--spacing) * 5);
   }
@@ -193,6 +198,9 @@
   }
   .h-35 {
     height: calc(var(--spacing) * 35);
+  }
+  .h-80 {
+    height: calc(var(--spacing) * 80);
   }
   .h-130 {
     height: calc(var(--spacing) * 130);
@@ -215,11 +223,20 @@
   .w-full {
     width: 100%;
   }
+  .flex-shrink {
+    flex-shrink: 1;
+  }
   .shrink-0 {
     flex-shrink: 0;
   }
+  .border-collapse {
+    border-collapse: collapse;
+  }
   .cursor-pointer {
     cursor: pointer;
+  }
+  .resize {
+    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -251,11 +268,24 @@
   .rounded-sm {
     border-radius: var(--radius-sm);
   }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
   .bg-\[\#d92926\] {
     background-color: #d92926;
   }
   .bg-\[url\(\'\.\/images\/bacck\.jpeg\'\)\] {
     background-image: url('./images/bacck.jpeg');
+  }
+  .bg-\[url\(\'\.\/images\/section_5-2\.jpeg\'\)\] {
+    background-image: url('./images/section_5-2.jpeg');
+  }
+  .bg-\[url\(\'\.\/images\/section_5-3\.jpeg\'\)\] {
+    background-image: url('./images/section_5-3.jpeg');
+  }
+  .bg-\[url\(\'\.\/images\/sectionn\.jpeg\'\)\] {
+    background-image: url('./images/sectionn.jpeg');
   }
   .bg-cover {
     background-size: cover;
@@ -278,11 +308,26 @@
   .pt-8 {
     padding-top: calc(var(--spacing) * 8);
   }
+  .pt-30 {
+    padding-top: calc(var(--spacing) * 30);
+  }
+  .pt-35 {
+    padding-top: calc(var(--spacing) * 35);
+  }
+  .pt-37 {
+    padding-top: calc(var(--spacing) * 37);
+  }
   .pt-40 {
     padding-top: calc(var(--spacing) * 40);
   }
+  .pt-45 {
+    padding-top: calc(var(--spacing) * 45);
+  }
   .pt-80 {
     padding-top: calc(var(--spacing) * 80);
+  }
+  .pl-3 {
+    padding-left: calc(var(--spacing) * 3);
   }
   .pl-4 {
     padding-left: calc(var(--spacing) * 4);
@@ -296,6 +341,10 @@
   .font-serif {
     font-family: var(--font-serif);
   }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
   .text-\[13px\] {
     font-size: 13px;
   }
@@ -304,6 +353,9 @@
   }
   .text-\[20px\] {
     font-size: 20px;
+  }
+  .text-\[27px\] {
+    font-size: 27px;
   }
   .text-\[30px\] {
     font-size: 30px;
@@ -317,6 +369,13 @@
   }
   .text-white {
     color: var(--color-white);
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
   }
   .lg\:block {
     @media (width >= 64rem) {
@@ -481,11 +540,16 @@
     }
   }
 }
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
 }
-@property --tw-border-style {
+@property --tw-outline-style {
   syntax: "*";
   inherits: false;
   initial-value: solid;
@@ -493,8 +557,9 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-font-weight: initial;
       --tw-border-style: solid;
+      --tw-font-weight: initial;
+      --tw-outline-style: solid;
     }
   }
 }
